@@ -56,17 +56,75 @@
             <p class="about-text">Một lầm tưởng mà khá nhiều người luyện IELTS Reading thường mắc phải đó là chỉ cắm cúi vào làm tests, tra cứu, ghi lại từ vựng và hy vọng mình có thể “lên trình” nhanh chóng. Nhưng sự thật là, những người band 7.0 trở lên, và xa hơn là thông thạo đọc – hiểu tiếng Anh không chỉ luyện đề mà họ đều có thói quen luyện đọc bằng tiếng Anh hàng ngày. Dưới đây là 15 nguồn website được chia theo trình độ giúp bạn cải thiện kỹ năng IELTS Reading hàng ngày.
 
             </p>
-         </div>   
+            
+            <div class="members-list">
+                <div class="member-item">
+                    <p class="member-name">Name</p>
+                    <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
+                </div>
+                <div class="member-item">
+                    <p class="member-name">Name</p>
+                    <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
+                </div>
+                <div class="member-item">
+                    <p class="member-name">Name</p>
+                    <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
+                </div>
+                <div class="clear"></div>
+            </div>
+         </div> 
+
            <!--Tour  section -->
-           <div class="content-section">
-              <h2 class="section-heading">TOUR DATES</h2>
-            <p class="section-sub-heading">Remember to book your name </p>
+           <div class="tour-section">
+               <div class="content-section">
+                  <h2 class="section-heading text-white">TOUR DATES</h2>
+                <p class="section-sub-heading text-white">Remember to book your name </p>
+                 
+                 <!-- Tickets-->
+                <ul class="tickets-list">
+                    <li>September <span class="sold-out">Sold out</span></li>
+                    <li>October <span class="sold-out">Sold out</span></li>
+                    <li>November  <span class="quatity">3</span></li>
+                </ul>
+                  
+                <!-- Place -->
+                <div class="place-list">
+                    <div class="place-item">
+                    <img src="./assets/img/band/playce.jpg" alt="New York" class="place-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">New York</h3>
+                            <p class="place-time">Fri 27 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button class="place-buy-btn js-buy-ticket">Buy Tickes</button>                           
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./assets/img/band/place2.jpg" alt="New York" class="place-img">
+                        <div class="place-body"> 
+                            <h3 class="place-heading">Paris</h3>
+                            <p class="place-time">Sat 28 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button  class="place-buy-btn js-buy-ticket">Buy Tickes</button>                           
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./assets/img/band/place3.jpg" alt="New York" class="place-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">San Francisco</h3>
+                            <p class="place-time">Sun 29 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button  class="place-buy-btn js-buy-ticket">Buy Tickes</button>                           
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+           </div>
            </div>    
 
           <!--Contract  section -->
           <div class="content-section">
-               <h2 class="section-heading">CONTACT</h2>
-               <p class="section-sub-heading">Fan?Drop a note! </p
+               <h2 class="section-heading ">CONTACT</h2>
+               <p class="section-sub-heading ">Fan?Drop a note! </p
        
             </div>  
             
@@ -77,6 +135,65 @@
         </div>
 
     </div>
+
+    <div class="modal js-modal">
+        <div class="modal-container">
+          <div class="modal-close js-modal-close">
+            <i class="ti-close"></i>
+          </div>
+
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i>
+                Tickets
+            </header>
+
+            <div class="modal-body">
+                <label for="ticket-quantity" class="model-label">
+                    <ti class="ti-shopping-cart"></ti>
+                    Tickets, $15 per person
+                </label>
+                <input  id="ticket-quantity" type="text" class="modal-input" placeholder="How many?">
+
+                <label for="ticket-email" class="model-label">
+                    <i class="ti-user"></i>
+                    Send to
+                </label>
+                <input  id="ticket-email" type="email" class="modal-input" placeholder="Enter email...">
+
+                <button id="buy-tickets">
+                    Pay <i class="ti-check"></i>
+                </button>
+            </div>
+
+
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const  buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalClose=document.querySelector('.js-modal-close')
+
+        // Hàm hiển thị modal mua vé (them class open vào modal)
+        function showBuyTickets(){
+            modal.classList.add('open')
+        }
+          
+        // Hàm ẩn modal mua vé (gỡ bỏ class open của modal )
+        function hideBuyTickets(){
+            modal.classList.remove('open') 
+        }
+
+        for ( const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click',showBuyTickets)
+        }
+
+        modalClose.addEventListener('click',hideBuyTickets) 
+
+    </script>
     
 </body>
 </html>
