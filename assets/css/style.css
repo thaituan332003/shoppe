@@ -7,13 +7,64 @@
 htlm{
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/*Common*/
 .clear{
     clear: both;
 }
 .text-white{
     color: #fff !important;
 }
+
+.text-center{
+    text-align: center !important;
+
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 8px !important;
+}
+.btn-send{
+    padding: 3px;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.row{
+    margin-left: -8px ;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full{
+    width: 100% ;
+}
+
+.col-half{
+    width: 50% ;
+}
+
+.col-third{
+    width: 33.333%;
+}
+
+
+/*Main*/
 #main  {
     
     
@@ -42,7 +93,7 @@ htlm{
      position: relative;
      
 }
-#na> li> a{
+#nav> li> a{
     color: #fff;
     text-transform: uppercase;
 }
@@ -150,8 +201,7 @@ line-height: 38px;
 }
 #content .about-text{
     margin-top: 25px;
-    fon
-    t-size: 15px;
+    font-size: 15px;
     text-align: justify;
     line-height: 1.4;
 }
@@ -159,11 +209,8 @@ line-height: 38px;
     margin-top: 48px;
    
 }
-#content .member-item{
-    float: left;
-    width: 33.3333%;
-    text-align: center;
-}
+
+
 #content .member-name{
     font-size: 15px;
   
@@ -212,16 +259,10 @@ border-bottom: 1px solid #ddd;
 
 /* Place */
 .place-list{
+    margin-top: 32px;    
+    margin-bottom: 48px;
+}
 
-    margin: 32px -8px 0 ;
-    padding-bottom: 48px ;
-    
-}
-.place-item{
-    float: left;
-    width: 33.33333%;
-    padding: 0 8px;
-}
 .place-img{
     width: 100%;
     display: block;
@@ -292,6 +333,7 @@ border-bottom: 1px solid #ddd;
     max-width: calc(100% - 32px);
     min-height: 200px;
     position: relative;
+    animation:modalfadeIn ease 0.3s;
 }
 header.modal-header{
     background: #009688;
@@ -360,3 +402,73 @@ header.modal-header{
     display: flex;
 }
 
+@keyframes modalfadeIn{
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform:  translateY(0);
+    }
+}
+/*Contact from*/
+.contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+
+}
+.contact-btn{
+    display: flex;
+    justify-content: flex-end;
+     
+}
+.contract-message{
+    margin-top: 10px;
+}
+/*footer*/
+.footer-img{
+    width: 100%;
+}
+.footer-container-icons{
+    padding: 64px 16px ;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+.icon-footer:hover{
+   
+    opacity: 0.5;
+}
+.icon-footer{
+padding-right: 3px;
+text-decoration: none;
+color: #000;
+}
+.footer-w3{
+    padding-left: 3px;
+}
+
+.footer-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;   
+}
+
+   

@@ -58,15 +58,15 @@
             </p>
             
             <div class="members-list">
-                <div class="member-item">
+                <div class="col col-third text-center">
                     <p class="member-name">Name</p>
                     <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
                 </div>
-                <div class="member-item">
+                <div class="col col-third text-center">
                     <p class="member-name">Name</p>
                     <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
                 </div>
-                <div class="member-item">
+                <div class="col col-third text-center">
                     <p class="member-name">Name</p>
                     <img src="./assets/img/band/member4.jpg" alt="Name" class="member-img">
                 </div>
@@ -88,8 +88,8 @@
                 </ul>
                   
                 <!-- Place -->
-                <div class="place-list">
-                    <div class="place-item">
+                <div class=" row place-list">
+                    <div class="col col-third">
                     <img src="./assets/img/band/playce.jpg" alt="New York" class="place-img">
                         <div class="place-body">
                             <h3 class="place-heading">New York</h3>
@@ -98,7 +98,7 @@
                             <button class="place-buy-btn js-buy-ticket">Buy Tickes</button>                           
                         </div>
                     </div>
-                    <div class="place-item">
+                    <div class="col col-third">
                         <img src="./assets/img/band/place2.jpg" alt="New York" class="place-img">
                         <div class="place-body"> 
                             <h3 class="place-heading">Paris</h3>
@@ -107,7 +107,7 @@
                             <button  class="place-buy-btn js-buy-ticket">Buy Tickes</button>                           
                         </div>
                     </div>
-                    <div class="place-item">
+                    <div class="col col-third">
                         <img src="./assets/img/band/place3.jpg" alt="New York" class="place-img">
                         <div class="place-body">
                             <h3 class="place-heading">San Francisco</h3>
@@ -124,20 +124,54 @@
           <!--Contract  section -->
           <div class="content-section">
                <h2 class="section-heading ">CONTACT</h2>
-               <p class="section-sub-heading ">Fan?Drop a note! </p
-       
+               <p class="section-sub-heading ">Fan?Drop a note! </p>
+
+               <div class="row contact-content">
+                <div class="col col-hafl contact-info">
+                    <p><i class="ti-location-pin"></i>Chicago, US</p>
+                    <p><i class="ti-mobile"></i>Phone: +00 1515151515</p>
+                    <p><i class="ti-email"></i>Email: mail@mail.com</p> 
+                </div>
+                <div class="col col-hafl contact-form">
+                    <form action="">
+                        <div class="row">
+                           <div class="col col-hafl ">
+                              <input type="text" name="" placeholder="Name" id="" class="form-control">
+                           </div>
+                           <div class="col col-hafl">
+                            <input type="email" name="" placeholder="Email" id="" class="form-control">
+                         </div>
+                        </div>
+                        <div class="row contract-message">
+                            <div class="col col-full">
+                                <input type="text" name="" placeholder="Message" id="" class="form-control">
+                             </div>
+                        </div>
+                       <div class="contact-btn"> <input class="mt-16 btn-send" type="submit" value="SEND"></div>
+                    </form>
+                </div>
+               </div>
             </div>  
             
         </div>
 
         <div id="footer">
-
+                 <img class="footer-img" src="./assets/img/band/footer1.jpg" alt="#">
+                <div class="footer-container-icons ">
+                    <a href="#" class="icon-footer ti-facebook"></a>
+                    <a href="#" class="icon-footer ti-instagram"></a>
+                    <a href="#" class="icon-footer ti-linux"></a>
+                    <a href="#" class="icon-footer ti-pinterest"></a>
+                    <a href="#" class="icon-footer ti-twitter-alt"></a>
+                    <a href="#" class="icon-footer ti-linkedin"></a>                                      
+                </div>
+                <div><p class="footer-title">Powered by<a href="" class="footer-w3">w3.css</a> </p></div>
         </div>
 
     </div>
 
     <div class="modal js-modal">
-        <div class="modal-container">
+        <div class="modal-container js-modal-container">
           <div class="modal-close js-modal-close">
             <i class="ti-close"></i>
           </div>
@@ -175,6 +209,7 @@
     <script>
         const  buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
         const modalClose=document.querySelector('.js-modal-close')
 
         // Hàm hiển thị modal mua vé (them class open vào modal)
@@ -186,13 +221,19 @@
         function hideBuyTickets(){
             modal.classList.remove('open') 
         }
-
-        for ( const buyBtn of buyBtns) {
+ 
+        // lặp và nghe click
+        for (const buyBtn of buyBtns) {
             buyBtn.addEventListener('click',showBuyTickets)
         }
-
+        //nghe hành  vi click
         modalClose.addEventListener('click',hideBuyTickets) 
 
+        modal.addEventListener('click',hideBuyTickets)
+
+        modalContainer.addEventListener('click', function (event) {
+             event.stopPropagation()
+        })
     </script>
     
 </body>
