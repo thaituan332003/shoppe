@@ -6,6 +6,8 @@
 }
 htlm{
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    
 }
 /*Common*/
 .clear{
