@@ -72,13 +72,14 @@ htlm{
     
 }
 #header{
-    height: 46px;
-    background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    height: 46px;
+    background-color: #000;
     z-index: 1;
+    overflow: hidden;
 
 }
 #nav{
@@ -100,7 +101,7 @@ htlm{
     text-transform: uppercase;
 }
 
-#nav li a{
+#nav li a {
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px  ;
@@ -137,27 +138,44 @@ line-height: 38px;
 #nav .nav-arrow-down{
     font-size:14px;
 }
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right:0;
+    display: none;
+}
+
+
+
+#header .mobile-menu-btn,
 #header .search-btn{
     float: right;
     padding: 0 21px;
-    
 }
+
 #header .search-btn:hover{
     background-color:#f44336  ;
     cursor: pointer;
-
 }
+#header .mobile-menu-btn:hover{
+   color: #000;
+}
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 20px;
     line-height: 46px;
-    height: 100%;
+
 }
 #slider{
    position: relative;
    margin-top: 46px;
    padding-top: 50%;
-   background: url('/assets/img/slider1/slider1.jpg') top center / cover no-repeat;
+   background: url('/assets/img/slider1/slider2.jpg') top center / cover no-repeat;
 
 }
 #slider .text-content{
@@ -183,9 +201,12 @@ line-height: 38px;
 }
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 
 }
 #content .section-heading{
@@ -217,10 +238,10 @@ line-height: 38px;
     font-size: 15px;
   
 }
-#conten .member-img{
-     width: 154px;
+#content .member-img{
+    width: 154px;
     margin-top: 15px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 /*Tour sectin */
 .tour-section{

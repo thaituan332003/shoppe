@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Band</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons-font (1)/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -18,26 +19,30 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contract">Contrac</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                        <i class="nav-arrpw-down ti-angle-down"></i>
                     </a>
                     <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
-                    </ul>
-            
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>        
                 </li>
-
             </ul>
             <!-- End:  Nav -->
 
-            <!-- Begin: Search button -->
+
+               <!-- Mobile menu button -->
             <div class="search-btn">
                 <i class="search-icon  ti-search"></i>
             </div>
-            <!-- End: Search button --> 
+            <!-- Search button -->
+
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+            
 
         </div>
 
@@ -53,8 +58,7 @@
          <div id="band" class="content-section">
             <h2 class="section-heading">THE BAND</h2>
             <p class="section-sub-heading">We love music</p>
-            <p class="about-text">Một lầm tưởng mà khá nhiều người luyện IELTS Reading thường mắc phải đó là chỉ cắm cúi vào làm tests, tra cứu, ghi lại từ vựng và hy vọng mình có thể “lên trình” nhanh chóng. Nhưng sự thật là, những người band 7.0 trở lên, và xa hơn là thông thạo đọc – hiểu tiếng Anh không chỉ luyện đề mà họ đều có thói quen luyện đọc bằng tiếng Anh hàng ngày. Dưới đây là 15 nguồn website được chia theo trình độ giúp bạn cải thiện kỹ năng IELTS Reading hàng ngày.
-
+            <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             
             <div class="members-list">
@@ -151,14 +155,12 @@
                     </form>
                 </div>
                </div>
-            </div>  
-            
+            </div>              
         </div>
 
         <div id="footer">
                  <img class="footer-img" src="./assets/img/band/footer1.jpg" alt="#">
                 <div class="footer-container-icons ">
-                    <a href="#" class="icon-footer ti-facebook"></a>
                     <a href="#" class="icon-footer ti-instagram"></a>
                     <a href="#" class="icon-footer ti-linux"></a>
                     <a href="#" class="icon-footer ti-pinterest"></a>
@@ -234,6 +236,33 @@
         modalContainer.addEventListener('click', function (event) {
              event.stopPropagation()
         })
+    </script>
+
+    <script>
+          var header = document.getElementById('header');
+          var mobileMenu = document.getElementById('mobile-menu');
+          var headerHeight = header.clientHeight;
+
+          // Đóng mở mobile menu
+          mobileMenu.onclick = function() {
+          var isClosed = header.clientHeight === headerHeight;
+          if (isClosed) {
+            header.style.height = 'auto';
+           } else{
+            header.style.height = null;
+           }
+          }
+          // Tự động đóng khi chọn menu 
+          var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+          for (var i = 0; i < menuItems.length; i++){
+            var menuItem = menuItems[i];
+          
+            menuItem.onclick = function() {
+                header.style.height = null;
+            }
+          
+          }
+
     </script>
     
 </body>
