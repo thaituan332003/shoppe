@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-htlm{
+html{
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
     
@@ -27,7 +27,10 @@ htlm{
 }
 
 .mt-16 {
-    margin-top: 8px !important;
+    margin-top: 16px !important;
+}
+.mt-32{
+    margin-top: 32px !important;
 }
 .btn-send{
     padding: 3px;
@@ -79,7 +82,7 @@ htlm{
     height: 46px;
     background-color: #000;
     z-index: 1;
-    overflow: hidden;
+ 
 
 }
 #nav{
@@ -125,11 +128,10 @@ htlm{
     top: 100%;
     left: 0%;
     min-width: 160px;
-    position: absolute;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0 , 0 , 0 , 0,3)  ;
 }
-#nav .subnav a{
+#nav .subnav a {
 color: #000;
 padding:0 12px ;
 line-height: 38px;
@@ -229,7 +231,7 @@ line-height: 38px;
     line-height: 1.4;
 }
 #content .members-list{
-    margin-top: 48px;
+    margin-top: 32px;
    
 }
 
@@ -282,7 +284,7 @@ border-bottom: 1px solid #ddd;
 
 /* Place */
 .place-list{
-    margin-top: 32px;    
+    margin-top: 16px;    
     margin-bottom: 48px;
 }
 
@@ -331,7 +333,7 @@ border-bottom: 1px solid #ddd;
 
 /*Footer section*/
 
-}
+
 
 #footer{
 
@@ -438,6 +440,7 @@ header.modal-header{
 /*Contact from*/
 .contact-content{
     margin-top: 48px;
+
 }
 .contact-info{
     font-size: 18px;
